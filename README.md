@@ -12,7 +12,7 @@ FIXME: systemd or sysvinit or mdev-busybox
 
 ```sh
 # Setup your system to build OpenEmbedded/Yocto Project or use a container
-docker run --privileged -it --rm --volume oe-workspace:/home/builder/workspace --name poky oe-builder
+docker run -it --volume oe-workspace:/home/builder/workspace --name poky oe-builder
 
 # Clone this repo
 git clone https://github.com/ManuW/oe-cups.git

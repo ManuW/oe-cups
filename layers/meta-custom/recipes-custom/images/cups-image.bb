@@ -8,13 +8,13 @@ LICENSE = "MIT"
 
 inherit core-image
 
-IMAGE_INSTALL:append = " cups nano dropbear sudo"
+IMAGE_INSTALL:append = " cups nano dropbear sudo avahi"
 
 inherit extrausers
 # password builder
 PASSWD = "\$1\$imVLN45Z\$GsGd7Yt4sa9.QRli20O6R1"
 EXTRA_USERS_PARAMS = "\
-    useradd --system --password '$PASSWD' --groups sudo --create-home --shell /bin/sh builder; \
+    useradd --system --password '$PASSWD' --groups sudo,lp,lpadmin --create-home --shell /bin/sh builder; \
     "
 
 IMAGE_ROOTFS_SIZE ?= "8192"
