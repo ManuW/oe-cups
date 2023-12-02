@@ -52,6 +52,9 @@ local_conf_header:
     BUILDHISTORY_COMMIT = "1"
     DL_DIR ?= "${TOPDIR}/../downloads"
     SSTATE_DIR ?= "${TOPDIR}/../sstate-cache"
+    DISTRO_FEATURES:append = " zeroconf usbhost systemd pam"
+    INIT_MANAGER = "systemd"
+    hostname:pn-base-files = "cups"
   diskmon: |
     BB_DISKMON_DIRS = "\
         STOPTASKS,${TMPDIR},1G,100K \

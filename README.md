@@ -8,6 +8,7 @@ FIXME: Write readme
 FIXME: Setup user pi with password raspberry
 FIXME: CUPS + web view
 FIXME: Setup sudoers
+FIXME: systemd or sysvinit or mdev-busybox
 
 ```sh
 # Setup your system to build OpenEmbedded/Yocto Project or use a container

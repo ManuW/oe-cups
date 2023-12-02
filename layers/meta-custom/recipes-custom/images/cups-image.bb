@@ -8,17 +8,13 @@ LICENSE = "MIT"
 
 inherit core-image
 
-INIT_MANAGER = "systemd"
-
-IMAGE_INSTALL:append = " cups nano dropbear zeroconf sudo zsh"
-DISTRO_FEATURES:append = " zeroconf usbhost systemd pam"
-
-hostname:pn-base-files = "cups"
+IMAGE_INSTALL:append = " cups nano dropbear sudo"
 
 inherit extrausers
 # password builder
+PASSWD = "\$1\$imVLN45Z\$GsGd7Yt4sa9.QRli20O6R1"
 EXTRA_USERS_PARAMS = "\
-    useradd --system --password '$1$imVLN45Z$GsGd7Yt4sa9.QRli20O6R1' --groups sudo --create-home --shell /bin/zsh builder; \
+    useradd --system --password '$PASSWD' --groups sudo --create-home --shell /bin/sh builder; \
     "
 
 IMAGE_ROOTFS_SIZE ?= "8192"
