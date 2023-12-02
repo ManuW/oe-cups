@@ -8,7 +8,8 @@ target:
 
 repos:
   meta-custom:
-    path: layers/meta-custom
+    layers:
+      layers/meta-custom:
 
   meta-raspberry:
     url: https://github.com/agherzan/meta-raspberrypi.git
