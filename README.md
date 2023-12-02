@@ -23,3 +23,11 @@ kas checkout cups-raspi2.yml
 # Build the image
 kas build cups-raspi2.yml 
 ```
+
+## VSCode Workspace Settings
+
+See file `.vscode/settings.json`.
+
+- Update settings to find files in folder layers
+
+- Specific [Yocto Project BitBake](https://marketplace.visualstudio.com/items?itemName=yocto-project.yocto-bitbake) extension settings
