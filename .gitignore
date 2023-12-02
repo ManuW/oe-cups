@@ -1,3 +1,5 @@
 build/
-layers/
-!layers/meta-custom
+layers/*
+!layers/meta-custom/
+downloads/
+sstate-cache/

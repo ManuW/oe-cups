@@ -1,0 +1,17 @@
+{
+    "search.exclude": {
+        "build": true
+    },
+    "search.useIgnoreFiles": false,
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/layers/poky/bitbake/lib",
+        "/home/builder/workspace/oe-cups/layers/poky/bitbake/lib"
+    ],
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/layers/poky/bitbake/lib",
+        "/home/builder/workspace/oe-cups/layers/poky/bitbake/lib"
+    ],
+    "bitbake.pathToBuildFolder": "${workspaceFolder}/build",
+    "bitbake.pathToEnvScript": "${workspaceFolder}/layers/poky/oe-init-build-env",
+    "bitbake.pathToBitbakeFolder": "${workspaceFolder}/layers/poky/bitbake",
+}
