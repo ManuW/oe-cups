@@ -2,7 +2,7 @@ header:
   version: 8
 
 machine: raspberrypi2
-distro: poky
+distro: poky-systemd
 target:
   - cups-image
 
@@ -45,16 +45,12 @@ bblayers_conf_header:
 local_conf_header:
   standard: |
     CONF_VERSION = "2"
-    PACKAGE_CLASSES = "package_rpm"
     USER_CLASSES = "buildstats"
     PATCHRESOLVE = "noop"
     INHERIT += "buildhistory"
     BUILDHISTORY_COMMIT = "1"
     DL_DIR ?= "${TOPDIR}/../downloads"
     SSTATE_DIR ?= "${TOPDIR}/../sstate-cache"
-    DISTRO_FEATURES:append = " usbhost systemd pam"
-    INIT_MANAGER = "systemd"
-    hostname:pn-base-files = "cups"
   diskmon: |
     BB_DISKMON_DIRS = "\
         STOPTASKS,${TMPDIR},1G,100K \
