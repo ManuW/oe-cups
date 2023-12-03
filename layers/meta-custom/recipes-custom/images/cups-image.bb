@@ -8,13 +8,13 @@ LICENSE = "MIT"
 
 inherit core-image
 
-IMAGE_INSTALL:append = " cups nano dropbear sudo"
+IMAGE_INSTALL:append = " avahi-daemon avahi-utils cups nano dropbear sudo"
 
 inherit extrausers
-# password builder
-PASSWD = "\$1\$imVLN45Z\$GsGd7Yt4sa9.QRli20O6R1"
+# user pi - password raspberry
+PASSWD = "\$1\$9H9WK0ti\$8mqBYWVxFAoEJMKnf8BNz0"
 EXTRA_USERS_PARAMS = "\
-    useradd --system --password '$PASSWD' --groups sudo --create-home --shell /bin/sh builder; \
+    useradd --system --password '${PASSWD}' --groups sudo,lp,lpadmin --create-home --shell /bin/sh pi; \
     "
 
 IMAGE_ROOTFS_SIZE ?= "8192"
