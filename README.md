@@ -5,10 +5,31 @@
 FIXME: Write readme
        - build instructions
        - how to use
-FIXME: Setup user pi with password raspberry
-FIXME: CUPS + web view
-FIXME: Setup sudoers
 FIXME: systemd or sysvinit or mdev-busybox
+FIXME: My printer is not available ☹️
+       Driver is missing. Maybe there is a ppd file
+FIXME: Change cups config. Changes begin with a '§' character
+
+```txt
+# Only listen for connections from the local machine.
+§ #Listen localhost:631
+Listen /run/cups/cups.sock
+§ Listen 0.0.0.0:631
+
+
+# Restrict access to the server...
+<Location />
+  Order allow,deny
+§ Allow from 192.168.178.*
+</Location>
+
+# Restrict access to the admin pages...
+<Location /admin>
+  Order allow,deny
+§  Allow from 192.168.178.*
+</Location>
+``````
+
 
 ```sh
 # Setup your system to build OpenEmbedded/Yocto Project or use a container
